@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang= "ru ","en">
+<html lang= "ru ">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,16 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
-           
+            <style>
+                li {
+                    list-style-type: none; /* Убираем маркеры */
+                }
+
+                ul {
+                    margin-left: 0; 
+                    padding-left: 0; 
+                }
+            </style>
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -36,9 +45,13 @@
                     </li>
                     <li>
                         <a href="about.html"> Zero Waste </a>
-                    </li>
+</li>
                     <li>
-                        <a href="post.html">Способы уменьшить отходы</a>
+                        <a href="post.html">Способы уменьшить отходы <i class="fa fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="">Чеки</a></li>
+                            <li><a href="">Пластик</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="contact.html">Контакты</a>
@@ -115,7 +128,7 @@
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="#">Читать больше &rarr;</a>
+                        <a href="post.html">Читать больше &rarr;</a>
                     </li>
                 </ul>
             </div>
