@@ -7,34 +7,95 @@ hr.small { max-width: 100px;
     margin: 15px auto;
     border-width: 4px;
     border-color: #333}
-.nav li a:hover {color: #c0a97a;}
-.submenu {
+
+nav {
+  text-align: center;
+  padding: 4px 0 0;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  display: block;
+  color: #222;
+}
+.nav > li {
+  display: inline-block;
+  position: relative;
+}
+.nav > li > a {
+  position: relative;
+  padding: 10px 15px;
+  ;
+  font-size: 1.5em;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+.nav > li > a:before {
+  content: "";
   position: absolute;
+  z-index: 5;
   left: 50%;
   top: 100%;
-  width: 210px;
-  margin-left: -105px;
-  z-index: 5;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  transition: .3s;
+}
+.nav li:hover a:before {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+.submenu {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 100%;
+  width: 150px;
+  padding: 15px 0 15px;
+  margin-top: 4px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0,0,0,.2);
+  box-sizing: border-box;
   visibility: hidden;
   opacity: 0;
-  transform: scale(.8);
-  transition: .4s ease-in-out;
+  transform: translate(-50%, 20px);
+  transition: .3s;
 }
-.submenu li a {
-  padding: 10px 0;
-  margin: 0 10px;
-  font-size: 12px;
-  color: #484848;
-  
-}
-.nav > li:hover .submenu {
+.nav> li:hover .submenu {
   visibility: visible;
   opacity: 1;
-  transform: scale(1);
+  transform: translate(-50%, 0);
 }
+.submenu a {
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 4px 6px;
+  transition: .3s linear;
+}
+.submenu a:hover {background: #e8e8e8;}
+.nav a.selected {
+     color: blue;
+     text-decoration: none;
+     pointer-events: none;
+ }
 bar-custom{position:absolute;top:0;left:0;width:100%;z-index:3}.navbar-custom .navbar-header .navbar-toggle{color:#777;font-weight:800;text-transform:uppercase;font-size:12px}
-    .navbar-custom .nav li a{text-transform:uppercase;font-size:12px;letter-spacing:1px}@media only screen and (min-width:768px)
-    {.navbar-custom{background:0 0;border-bottom:1px solid transparent}
+    .navbar-custom .nav li a{
+      text-transform:uppercase;
+      font-size:12px;
+      letter-spacing:1px
+    }@media only screen and (min-width:768px)
+    {.navbar-custom{
+      background:0 0;
+      border-bottom:1px solid transparent
+    }
      .navbar-custom .navbar-brand{color:#fff;padding:20px}
     .navbar-custom .navbar-brand:focus,.navbar-custom .navbar-brand:hover{color:rgba(89,89,89)}
      .navbar-custom .nav li a{color:#333;padding:20px}
